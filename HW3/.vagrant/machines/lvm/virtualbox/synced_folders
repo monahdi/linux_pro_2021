@@ -1,0 +1,1 @@
+{"rsync":{"/vagrant":{"type":"rsync","guestpath":"/vagrant","hostpath":"/home/toor/git_linux/linux_pro_2021/HW3","disabled":false,"__vagrantfile":true,"owner":"vagrant","group":"vagrant"}}}
