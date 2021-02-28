@@ -35,43 +35,8 @@ log      =internal log           bsize=4096   blocks=2560, version=2
 realtime =none                   extsz=4096   blocks=0, rtextents=0
 [root@lvm ~]# mount /dev/vg_root/lv_root /mnt
 [root@lvm ~]# xfsdump -J - /dev/VolGroup00/LogVol00 | xfsrestore -J - /mnt
-xfsdump: using file dump (drive_simple) strategy
-xfsdump: version 3.1.7 (dump format 3.0)
-xfsdump: level 0 dump of lvm:/
-xfsdump: dump date: Sun Feb 14 15:08:54 2021
-xfsdump: session id: 05197228-a7e0-4030-97d2-4fd42209754a
-xfsdump: session label: ""
-xfsrestore: using file dump (drive_simple) strategy
-xfsrestore: version 3.1.7 (dump format 3.0)
-xfsrestore: searching media for dump
-xfsdump: ino map phase 1: constructing initial dump list
-xfsdump: ino map phase 2: skipping (no pruning necessary)
-xfsdump: ino map phase 3: skipping (only one dump stream)
-xfsdump: ino map construction complete
-xfsdump: estimated dump size: 751942080 bytes
-xfsdump: creating dump session media file 0 (media 0, file 0)
-xfsdump: dumping ino map
-xfsdump: dumping directories
-xfsrestore: examining media file 0
-xfsrestore: dump description: 
-xfsrestore: hostname: lvm
-xfsrestore: mount point: /
-xfsrestore: volume: /dev/mapper/VolGroup00-LogVol00
-xfsrestore: session time: Sun Feb 14 15:08:54 2021
-xfsrestore: level: 0
-xfsrestore: session label: ""
-xfsrestore: media label: ""
-xfsrestore: file system id: b60e9498-0baa-4d9f-90aa-069048217fee
-xfsrestore: session id: 05197228-a7e0-4030-97d2-4fd42209754a
-xfsrestore: media id: 8476ebc5-76b5-401b-a435-c183df6d9da7
-xfsrestore: searching media for directory dump
-xfsrestore: reading directories
-xfsdump: dumping non-directory files
-xfsrestore: 2699 directories and 23617 entries processed
-xfsrestore: directory post-processing
-xfsrestore: restoring non-directory files
-xfsdump: ending media file
-xfsdump: media file size 728852072 bytes
+
+------------
 xfsdump: dump size (non-dir files) : 715687944 bytes
 xfsdump: dump complete: 10 seconds elapsed
 xfsdump: Dump Status: SUCCESS
@@ -86,58 +51,8 @@ Found initrd image: /boot/initramfs-3.10.0-862.2.3.el7.x86_64.img
 done
 [root@lvm /]# cd /boot ; for i in `ls initramfs-*img`; do dracut -v $i `echo $i|sed "s/initramfs-//g;
 > s/.img//g"` --force; done
-Executing: /sbin/dracut -v initramfs-3.10.0-862.2.3.el7.x86_64.img 3.10.0-862.2.3.el7.x86_64 --force
-dracut module 'busybox' will not be installed, because command 'busybox' could not be found!
-dracut module 'crypt' will not be installed, because command 'cryptsetup' could not be found!
-dracut module 'dmraid' will not be installed, because command 'dmraid' could not be found!
-dracut module 'dmsquash-live-ntfs' will not be installed, because command 'ntfs-3g' could not be found!
-dracut module 'multipath' will not be installed, because command 'multipath' could not be found!
-dracut module 'busybox' will not be installed, because command 'busybox' could not be found!
-dracut module 'crypt' will not be installed, because command 'cryptsetup' could not be found!
-dracut module 'dmraid' will not be installed, because command 'dmraid' could not be found!
-dracut module 'dmsquash-live-ntfs' will not be installed, because command 'ntfs-3g' could not be found!
-dracut module 'multipath' will not be installed, because command 'multipath' could not be found!
-*** Including module: bash ***
-*** Including module: nss-softokn ***
-*** Including module: i18n ***
-*** Including module: drm ***
-*** Including module: plymouth ***
-*** Including module: dm ***
-Skipping udev rule: 64-device-mapper.rules
-Skipping udev rule: 60-persistent-storage-dm.rules
-Skipping udev rule: 55-dm.rules
-*** Including module: kernel-modules ***
-Omitting driver floppy
-*** Including module: lvm ***
-Skipping udev rule: 64-device-mapper.rules
-Skipping udev rule: 56-lvm.rules
-Skipping udev rule: 60-persistent-storage-lvm.rules
-*** Including module: qemu ***
-*** Including module: resume ***
-*** Including module: rootfs-block ***
-*** Including module: terminfo ***
-*** Including module: udev-rules ***
-Skipping udev rule: 40-redhat-cpu-hotplug.rules
-Skipping udev rule: 91-permissions.rules
-*** Including module: biosdevname ***
-*** Including module: systemd ***
-*** Including module: usrmount ***
-*** Including module: base ***
-*** Including module: fs-lib ***
-*** Including module: shutdown ***
-*** Including modules done ***
-*** Installing kernel module dependencies and firmware ***
-*** Installing kernel module dependencies and firmware done ***
-*** Resolving executable dependencies ***
-*** Resolving executable dependencies done***
-*** Hardlinking files ***
-*** Hardlinking files done ***
-*** Stripping files ***
-*** Stripping files done ***
-*** Generating early-microcode cpio image contents ***
-*** No early-microcode cpio image needed ***
-*** Store current command line parameters ***
-*** Creating image file ***
+
+-----------
 *** Creating image file done ***
 *** Creating initramfs image file '/boot/initramfs-3.10.0-862.2.3.el7.x86_64.img' done ***
 [root@lvm boot]# vi /boot/grub2/grub.cfg
@@ -179,43 +94,8 @@ log      =internal log           bsize=4096   blocks=2560, version=2
 realtime =none                   extsz=4096   blocks=0, rtextents=0
 [root@lvm ~]# mount /dev/VolGroup00/LogVol00 /mnt
 [root@lvm ~]# xfsdump -J - /dev/vg_root/lv_root | xfsrestore -J - /mnt
-xfsrestore: using file dump (drive_simple) strategy
-xfsrestore: version 3.1.7 (dump format 3.0)
-xfsdump: using file dump (drive_simple) strategy
-xfsdump: version 3.1.7 (dump format 3.0)
-xfsdump: level 0 dump of lvm:/
-xfsdump: dump date: Sun Feb 14 15:15:20 2021
-xfsdump: session id: e84e80d1-6815-4bb8-9a8b-fcd89efd0238
-xfsdump: session label: ""
-xfsrestore: searching media for dump
-xfsdump: ino map phase 1: constructing initial dump list
-xfsdump: ino map phase 2: skipping (no pruning necessary)
-xfsdump: ino map phase 3: skipping (only one dump stream)
-xfsdump: ino map construction complete
-xfsdump: estimated dump size: 751116288 bytes
-xfsdump: creating dump session media file 0 (media 0, file 0)
-xfsdump: dumping ino map
-xfsdump: dumping directories
-xfsrestore: examining media file 0
-xfsrestore: dump description: 
-xfsrestore: hostname: lvm
-xfsrestore: mount point: /
-xfsrestore: volume: /dev/mapper/vg_root-lv_root
-xfsrestore: session time: Sun Feb 14 15:15:20 2021
-xfsrestore: level: 0
-xfsrestore: session label: ""
-xfsrestore: media label: ""
-xfsrestore: file system id: 1e5456b1-9d1c-41b4-b60a-5cac689a6f8a
-xfsrestore: session id: e84e80d1-6815-4bb8-9a8b-fcd89efd0238
-xfsrestore: media id: c085b82b-8566-488d-8b90-b67367d11b4f
-xfsrestore: searching media for directory dump
-xfsrestore: reading directories
-xfsdump: dumping non-directory files
-xfsrestore: 2703 directories and 23622 entries processed
-xfsrestore: directory post-processing
-xfsrestore: restoring non-directory files
-xfsdump: ending media file
-xfsdump: media file size 727510544 bytes
+
+----------
 xfsdump: dump size (non-dir files) : 714342736 bytes
 xfsdump: dump complete: 14 seconds elapsed
 xfsdump: Dump Status: SUCCESS
@@ -230,58 +110,8 @@ Found initrd image: /boot/initramfs-3.10.0-862.2.3.el7.x86_64.img
 done
 [root@lvm /]# cd /boot ; for i in `ls initramfs-*img`; do dracut -v $i `echo $i|sed "s/initramfs-//g;
 > s/.img//g"` --force; done
-Executing: /sbin/dracut -v initramfs-3.10.0-862.2.3.el7.x86_64.img 3.10.0-862.2.3.el7.x86_64 --force
-dracut module 'busybox' will not be installed, because command 'busybox' could not be found!
-dracut module 'crypt' will not be installed, because command 'cryptsetup' could not be found!
-dracut module 'dmraid' will not be installed, because command 'dmraid' could not be found!
-dracut module 'dmsquash-live-ntfs' will not be installed, because command 'ntfs-3g' could not be found!
-dracut module 'multipath' will not be installed, because command 'multipath' could not be found!
-dracut module 'busybox' will not be installed, because command 'busybox' could not be found!
-dracut module 'crypt' will not be installed, because command 'cryptsetup' could not be found!
-dracut module 'dmraid' will not be installed, because command 'dmraid' could not be found!
-dracut module 'dmsquash-live-ntfs' will not be installed, because command 'ntfs-3g' could not be found!
-dracut module 'multipath' will not be installed, because command 'multipath' could not be found!
-*** Including module: bash ***
-*** Including module: nss-softokn ***
-*** Including module: i18n ***
-*** Including module: drm ***
-*** Including module: plymouth ***
-*** Including module: dm ***
-Skipping udev rule: 64-device-mapper.rules
-Skipping udev rule: 60-persistent-storage-dm.rules
-Skipping udev rule: 55-dm.rules
-*** Including module: kernel-modules ***
-Omitting driver floppy
-*** Including module: lvm ***
-Skipping udev rule: 64-device-mapper.rules
-Skipping udev rule: 56-lvm.rules
-Skipping udev rule: 60-persistent-storage-lvm.rules
-*** Including module: qemu ***
-*** Including module: resume ***
-*** Including module: rootfs-block ***
-*** Including module: terminfo ***
-*** Including module: udev-rules ***
-Skipping udev rule: 40-redhat-cpu-hotplug.rules
-Skipping udev rule: 91-permissions.rules
-*** Including module: biosdevname ***
-*** Including module: systemd ***
-*** Including module: usrmount ***
-*** Including module: base ***
-*** Including module: fs-lib ***
-*** Including module: shutdown ***
-*** Including modules done ***
-*** Installing kernel module dependencies and firmware ***
-*** Installing kernel module dependencies and firmware done ***
-*** Resolving executable dependencies ***
-*** Resolving executable dependencies done***
-*** Hardlinking files ***
-*** Hardlinking files done ***
-*** Stripping files ***
-*** Stripping files done ***
-*** Generating early-microcode cpio image contents ***
-*** No early-microcode cpio image needed ***
-*** Store current command line parameters ***
-*** Creating image file ***
+
+----------
 *** Creating image file done ***
 *** Creating initramfs image file '/boot/initramfs-3.10.0-862.2.3.el7.x86_64.img' done ***
 ```
@@ -406,3 +236,116 @@ sdd                          8:48   0    1G  0 disk
 └─vg_var-lv_var_rimage_1   253:5    0  952M  0 lvm  
   └─vg_var-lv_var          253:6    0  952M  0 lvm  /var
 ```
+# HW5
+Задание вновь не предусматривает ничего кроме описания, поэтому прописываю в Readme. За основу взят Vagrantfile из ДЗ №3 (лежит в репе соответвующей папке).
+## Несколькими способами попасть в систему без пароля
+Всеми тремя способами терпим фиаско - первый и второй вываливают в кернел панику, третий просто вешает ВМ. По следам чата в слаке, находим занимателньое решение - выпилить аргументы 
+```
+console=tty0 console=ttyS0,115200n8
+```
+После этого все три способа прекрасно срабатывают, как и описано в методичке. Первым добавляем 
+```
+init=/bin/sh
+```
+и после 
+```
+mount -o remount,rw /
+```
+можно проверить работоспособность, например, запилив через echo файл с текстом. 
+Способ 2, добавить в конец строчки linux 16 
+```
+rd.break
+```
+и после произвести манипуляции по переводу ФС в режим записи и смены пароля рута путем
+```
+# mount -o remount,rw /sysroot
+# chroot /sysroot
+# passwd root
+# touch /.autorelabel
+```
+также работает только при удалении "консольных" аргументов. Проверку смены пароля произвести напрямую не удалось, т.к. вагрантовский плейбук напрямую бросает в пользователя lvm)Поэтому проверка осуществлялась по другому - через 
+```
+vagrant ssh
+```
+Ну и наконец также был првоерен способ 3, заключавшийся в добавлении
+```
+rw init=/sysroot/bin/sh
+```
+опять же с удалением "консольных" аргументов. Все сработало на ура.
+## Переименовать VG
+Вообщем то простое задание было здорово растянуто по времени из за невнимательности. Имя VG, как и все, христоматийно совпадало с примером. Сразу поставил nano на ВМ, т.к. борода еще не доросла до vim
+```
+# yum install nano
+```
+Меняем имя на OR, ибо так короче
+```
+# vgrename VolGroup00 OR
+  Volume group "VolGroup00" successfully renamed to "OR"
+```
+Меняем в файлах 
+```
+# nano /etc/fstab 
+# nano /etc/default/grub 
+# nano /boot/grub2/grub.cfg 
+```
+имя VG с VolGroup00 на OR, пересоздаем образ initrd
+```
+# mkinitrd -f -v /boot/initramfs-$(uname -r).img $(uname -r)
+```
+и...ВМ намертво зависает при перезагрузке после выбора ядра. И так три раза. Пока не выясняется, что в grub.cfg VG упоминается в трех местах, а я поменял в одном...fail. Переделываем, перезагружаемся и машина снова зависает. Грустим, ан всякий перезагружаем еще раз...и ВМ заводится. Щастье радость, VG переименована
+```
+# vgs
+  VG #PV #LV #SN Attr   VSize   VFree
+  OR   1   2   0 wz--n- <38.97g    0 
+```
+Можно наконец ехать дальше.
+## Добавляем пингвинский модуль в initrd
+На удивление, тут уже все пошло без казусов) Создаем директорию для своих модулей и едем туда
+```
+# mkdir /usr/lib/dracut/modules.d/01test
+# cd /usr/lib/dracut/modules.d/01test/
+```
+Создаем пару файлов и заносим туда скрипты из методички
+```
+# echo > module-setup.sh
+# nano module-setup.sh 
+# echo > test.sh
+# nano test.sh 
+```
+Пересобираем образ initrd
+```
+# mkinitrd -f -v /boot/initramfs-$(uname -r).img $(uname -r)
+
+---------
+*** Creating image file done ***
+*** Creating initramfs image file '/boot/initramfs-3.10.0-862.2.3.el7.x86_64.img' done ***
+
+# dracut -f -v
+
+---------
+*** Creating image file done ***
+*** Creating initramfs image file '/boot/initramfs-3.10.0-862.2.3.el7.x86_64.img' done ***
+```
+проверяем, что модуль установлися
+```
+# lsinitrd -m /boot/initramfs-$(uname -r).img | grep test
+test
+```
+так как уже наизусть знаем местоположение grub.cfg, прям там удаляем rghb и quiet из строки с linux 16 и решительно перезагружаемся! При перезугрузке видим
+```
+Hello! You are in dracut module!
+ ___________________
+< I'm dracut module >
+ -------------------
+   \
+    \
+        .--.
+       |o_o |
+       |:_/ |
+      //   \ \
+     (|     | )
+    /'\_   _/`\
+    \___)=(___/
+continuing....
+```
+радуемся и бежим сдавать эту ДЗ, дабы успеть сделать еще парочку)
